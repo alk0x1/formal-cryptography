@@ -1,4 +1,4 @@
-Require Import Nat Arith Ascii String.
+Require Import Nat Arith Ascii String List.
 Open Scope char_scope.
 
 Definition char_to_num (c : ascii) : nat :=
@@ -97,10 +97,10 @@ Compute (decrypt_string "DEF").
 
 
 Example test_encrypt_str: encrypt_string "ABC" = "DEF"%string.
+Proof. simpl. reflexivity. Qed.
 
 Example test_encrypt_A: encrypt_char 0 = 3.
 Proof. simpl. reflexivity. Qed.
  
 Example test_decrypt_A: decrypt_char 3 = 0.
 Proof. reflexivity. Qed.
-
